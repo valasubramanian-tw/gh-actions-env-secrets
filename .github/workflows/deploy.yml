@@ -9,7 +9,6 @@ env:
   MONGODB_DB_NAME: events_db
 jobs:
   lint:
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
@@ -17,6 +16,7 @@ jobs:
           echo "MONGODB_DB_NAME: ${{ env.MONGODB_DB_NAME }}"
           echo "PORT: ${{ env.PORT }}"
   test:
+    needs: lint
     environment: testing
     runs-on: ubuntu-latest
     env:
