@@ -15,7 +15,7 @@ try {
   await client.db(dbName).command({ ping: 1 });
   console.log('Connected successfully to server');
 } catch (error) {
-  console.log('Connection failed.', dbName);
+  console.log('Connection failed to connect to ' + dbName);
   await client.close();
   console.log('Connection closed.');
 }
